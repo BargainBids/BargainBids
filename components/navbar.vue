@@ -9,8 +9,7 @@
             <searchbar />
         </div>
         <div>
-            <img src="#" alt="User avatar" />
-            <span>Username placeholder</span>
+            <user />
         </div>
     </div>
   </template>

@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    <input type="text" class="searchbar" v-model="input" placeholder="Search for a product..." />
+    <input type="text" class="searchbar" placeholder="Search for a product..." />
  </template>
 
 
