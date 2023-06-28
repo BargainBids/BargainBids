@@ -1,0 +1,2 @@
+# BargainBids
+Ebay like website
