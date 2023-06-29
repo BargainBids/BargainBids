@@ -4,6 +4,7 @@ export default defineNuxtConfig({
     enabled: true
   },
   modules: [
-    '@nuxt/ui'
+    '@nuxt/ui',
+    '@pinia/nuxt'
   ]
 })
