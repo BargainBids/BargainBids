@@ -23,8 +23,8 @@ export default defineNuxtConfig({
       appId: "1:175442582499:web:0ae391dda639064c5d1ed6",
       measurementId: "G-81GBRV9TMT"
     },
-    services: {
-      auth: true,
+    admin: {
+      serviceAccount: './server/firebase/bargainbids23-firebase-adminsdk-4npwg-62a5652b24.json',
     }
   },
   // @ts-ignore
@@ -49,7 +49,6 @@ export default defineNuxtConfig({
   },
 
   image: {
-    dir: 'server/static/images',
     quality: 80,
     formats: ['webp'],
     screens: {
@@ -59,14 +58,5 @@ export default defineNuxtConfig({
       xl: 1280,
       '2xl': 1536
     },
-    presets: {
-      logo: {
-        modifiers: {
-          format: 'png',
-          width: 56,
-          height: 56,
-        }
-      }
-    }
   }
 })

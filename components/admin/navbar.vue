@@ -24,7 +24,7 @@ export default {
     <div class="header">
         <div class="logo ">
             <a class="flex items-center" href="/admin">
-                <nuxt-img fit="inside" format="webp" height="46" src="initials_logo-transformed.png" alt="Initials logo" />
+                <nuxt-img format="webp" height="46" src="initials_logo-transformed.png" alt="Initials logo" />
                 <span class="font-bold uppercase" style="color: var(--primary)">Bargain</span><span class="font-bold uppercase" style="color: var(--secondary)">Bay</span>
             </a>
         </div>

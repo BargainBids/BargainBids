@@ -16,10 +16,12 @@ logs
 .DS_Store
 .fleet
 .idea
-.iml
+*.iml
 
 # Local env files
 .env
 .env.*
 !.env.example
 
+# Firebase config
+/server/firebase/*

@@ -1,7 +1,7 @@
 <template>
     <div class="navbar">
         <div class="navbar_logo">
-        <img src="../server/static/images/fulltext_logo.png" alt="FullText logo" />
+        <img src="../public/fulltext_logo.png" alt="FullText logo" />
         </div>
         <div class="navbar_routers">
             <router-link class="router_button" to="/">Home</router-link>
