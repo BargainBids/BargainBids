@@ -8,9 +8,25 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/ui',
     '@pinia/nuxt',
-    '@nuxt/image'
+    '@nuxt/image',
+    'nuxt-vuefire'
   ],
 
+  vuefire: {
+    auth: true,
+    config: {
+      apiKey: "AIzaSyBT8eLeWjW3wzgbtuP11q3YE86SxvxqpkM",
+      authDomain: "bargainbids23.firebaseapp.com",
+      projectId: "bargainbids23",
+      storageBucket: "bargainbids23.appspot.com",
+      messagingSenderId: "175442582499",
+      appId: "1:175442582499:web:0ae391dda639064c5d1ed6",
+      measurementId: "G-81GBRV9TMT"
+    },
+    services: {
+      auth: true,
+    }
+  },
   // @ts-ignore
   imports: {
     dirs: ['./stores'],
