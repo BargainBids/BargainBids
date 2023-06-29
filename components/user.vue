@@ -1,9 +1,11 @@
 <template>
-  <div>
-    <div v-if="user">
-      <h2>Welcome, {{ user.displayName }}</h2>
+  <div class="userinfo">
+    <div class="userIsIn" v-if="user">
       <img :src="user.photoURL" alt="Profile Picture" />
-      <button @click="logout">log out</button>
+      <div class="userIsInText">
+        <h2>Welcome, {{ user.displayName }}</h2>
+        <button @click="logout">log out</button>
+      </div>
     </div>
     <div v-else>
       <button @click="signInWithPopup">Sign in with Google</button>
@@ -85,4 +87,40 @@ export default {
 
 
   </script>
+
+<style scoped lang="scss">
+.userinfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  border: 3px solid blue;
+}
+
+.userIsIn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  border: 3px solid yellow;
+}
+
+.userIsIn img{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.userIsInText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  border: 3px solid red;
+}
+</style>
   
