@@ -11,9 +11,9 @@ export const useUserAuthStore = defineStore({
     },
   },
   actions: {
-    authorizeUser(userAuth: any): void {
+    authorizeUser(userAuth: any) {
       this.userAuth = userAuth;
-      console.log("User Authenticated: " + this.userAuth);
     },
-  },
+    },
 });
+
