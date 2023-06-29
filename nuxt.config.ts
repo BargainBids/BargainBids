@@ -22,9 +22,6 @@ export default defineNuxtConfig({
       messagingSenderId: "175442582499",
       appId: "1:175442582499:web:0ae391dda639064c5d1ed6",
       measurementId: "G-81GBRV9TMT"
-    },
-    services: {
-      auth: true,
     }
   },
   // @ts-ignore
