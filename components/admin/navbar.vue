@@ -50,6 +50,19 @@ export default {
 </template>
 
 <style scoped lang="scss">
+.header {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5.6rem;
+    padding: 0 1rem;
+    background-color: white;
+    z-index: 100;
+    box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.4);
+}
+
 .logo {
     display: flex;
     height: 100%;
