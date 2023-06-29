@@ -1,8 +1,8 @@
 <template>
   <div>
     <div v-if="user">
-      <h2>Welcome, {{ userAuth.displayName }}</h2>
-      <img :src="userAuth.photoURL" alt="Profile Picture" />
+      <h2>Welcome, {{ user.displayName }}</h2>
+      <img :src="user.photoURL" alt="Profile Picture" />
       <button @click="logout">log out</button>
     </div>
     <div v-else>
@@ -15,10 +15,14 @@
 import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut } from "firebase/auth";
 import { initializeApp } from "firebase/app";
 import { useUserAuthStore } from '../stores/authStore.ts';
+import { useCurrentUser } from "vuefire";
 
 export default {
   setup() {
     const userAuth = useUserAuthStore();
+    const user = useCurrentUser();
+    console.log(user);
+    return { userAuth, user };
   },
   mounted() {
     const firebaseConfig = {
@@ -58,6 +62,7 @@ export default {
           console.log("Success!");
           console.log(result.user.displayName, result.user.email, result.user.photoURL);
           userAuth.authorizeUser(result.user);
+          console.log("current user from state: ", userAuth.getUserAuth.displayName);
         })
         .catch((error) => {
           // Handle error
@@ -77,6 +82,7 @@ export default {
     }
   },
 };
+
 
   </script>
   
