@@ -46,6 +46,7 @@ export default {
     onAuthStateChanged(auth, (user) => {
       if (user) {
         this.user = user;
+        console.log("user uid: ", user.uid);
         console.log("User is signed in");
       } else {
         this.user = null;
@@ -95,7 +96,6 @@ export default {
   align-items: center;
   justify-content: center;
   color: black;
-  border: 3px solid blue;
 }
 
 .userIsIn {
@@ -104,7 +104,6 @@ export default {
   align-items: center;
   justify-content: center;
   color: black;
-  border: 3px solid yellow;
 }
 
 .userIsIn img{
@@ -120,7 +119,6 @@ export default {
   align-items: center;
   justify-content: center;
   color: black;
-  border: 3px solid red;
 }
 </style>
   

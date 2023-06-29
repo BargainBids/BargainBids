@@ -21,9 +21,9 @@
     justify-content: space-between;
     align-items: center;
     padding: 0rem 2rem;
-    background-color: #ffffff;
+    background-color: #e2e2e2;
     height: 10vh;
-    border: 2px solid red;
+    border: 3px solid red;
   }
   
   .navbar_logo img {
