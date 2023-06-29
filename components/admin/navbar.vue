@@ -1,5 +1,23 @@
-<script setup lang="ts">
+<script lang="ts">
+import NavSearchbox from "~/components/admin/nav-searchbox.vue";
 
+export default {
+    components: {
+        NavSearchbox,
+    },
+    setup() {
+        const isActive = ref(false);
+
+        const showDrop = () => {
+            isActive.value = !isActive.value;
+        };
+
+        return {
+            isActive,
+            showDrop,
+        };
+    },
+};
 </script>
 
 <template>
@@ -10,16 +28,28 @@
                 <span class="font-bold uppercase" style="color: var(--primary)">Bargain</span><span class="font-bold uppercase" style="color: var(--secondary)">Bay</span>
             </a>
         </div>
-        <div class="search-box">
-
-        </div>
+        <nav-searchbox />
         <div class="admin-user flex flex-grow justify-end items-center">
-
+            <div class="flex justify-items-start gap-1 justify-center">
+                <div class="relative">
+                    <a class="first-letter" href="#" @click.prevent="showDrop">P</a>
+                    <div v-if="isActive" class="logout bg-background shadow p-8">
+                        <div>
+                            <div>
+                                Hello <span class="text-primary">Patrick!</span>
+                            </div>
+                            <div class="mt-4">
+                                <a class="text-danger" href="#">Logout</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </template>
 
-<style lang="scss">
+<style scoped lang="scss">
 .logo {
     display: flex;
     height: 100%;
@@ -28,5 +58,33 @@
         align-self: center;
         padding: 3px;
     }
+}
+
+.admin-user {
+    .first-letter {
+        width: 3.5rem;
+        height: 3.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 100%;
+        background-color: var(--primary);
+        font-weight: 600;
+    }
+
+    .logout {
+        position: absolute;
+        right: 0;
+        top: 115%;
+        width: 230px;
+        background-color: var(--background);
+    }
+}
+
+.text-primary {
+    color: var(--text-secondary);
+}
+.text-danger {
+    color: var(--text-danger);
 }
 </style>

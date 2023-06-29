@@ -11,12 +11,20 @@
 
     --comp1: #782de1;
     --comp2: #e68f51;
+
+    --text-primary: var(--primary);
+    --text-secondary: var(--secondary);
+    --text-success: #28a745;
+    --text-warning: #ffc107;
+    --text-danger: #dc3545;
+    --text-info: #17a2b8;
 }
 
 html {
     line-height: 1.5;
     tab-size: 4;
     font-size: 62.5%;
+    background-color: var(--background) !important;
 }
 body {
     font-size: 1.4rem;
