@@ -4,16 +4,19 @@
     <div v-if="user">
       <h2>Welcome, {{ user.displayName }}</h2>
       <img :src="user.photoURL" alt="Profile Picture" />
+      <button @click="logout">log out</button>
     </div>
     <div v-else>æggekage</div>
   </div>
 </template>
   
   <script>
-  import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged } from "firebase/auth";
+  import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut } from "firebase/auth";
   import { initializeApp } from "firebase/app";
-  
   export default {
+    setup() {
+      const userAuth = useUserAuthStore();
+    },
     data() {
       return {
         auth: null,
@@ -57,6 +60,7 @@
             this.user = result.user;
             console.log("Success!");
             console.log(result.user.displayName, result.user.email, result.user.photoURL);
+            userAuth.authorizeUser(result.user.displayName, result.user.email, result.user.photoURL);
             
           })
           .catch((error) => {
@@ -66,6 +70,14 @@
             console.log("Error from login: " + errorCode, errorMessage);
           });
       },
+      logout() {
+        const auth = getAuth();
+        signOut(auth).then(() => {
+          console.log("Succesfully logged out");
+        }).catch((error) => {
+          console.log("Logout failed");
+        });
+      }
     },
   };
   </script>
