@@ -22,9 +22,6 @@ const counter = useCounter()
 // }
 </script>
 
-<style scoped>
-button {
-  margin-right: 0.5rem;
-  margin-bottom: 0.5rem;
-}
+<style>
+  @import "./styles/index.scss";
 </style>

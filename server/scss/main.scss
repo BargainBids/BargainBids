@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --primary: #ff5160;
+    --secondary: #00a2ff;
+    --accent: #32e27b;
+    --background: white;
+    --text: black;
+
+    --comp1: #782de1;
+    --comp2: #e68f51;
+}
+
+html {
+    line-height: 1.5;
+    tab-size: 4;
+    font-size: 62.5%;
+}
+body {
+    font-size: 1.4rem;
+    color: var(--text);
+    margin: 0;
+    line-height: inherit;
+}

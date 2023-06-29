@@ -22,7 +22,7 @@ export default defineNuxtConfig({
 
   // @ts-ignore
   css: [
-    '@/server/css/main.css'
+    '@/server/scss/main.scss'
   ],
 
   postcss: {
@@ -47,8 +47,8 @@ export default defineNuxtConfig({
       logo: {
         modifiers: {
           format: 'png',
-          width: 50,
-          height: 50,
+          width: 56,
+          height: 56,
         }
       }
     }
