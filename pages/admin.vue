@@ -6,13 +6,15 @@
     <div class="wrapper">
         <admin-navbar />
         <div class="content-wrapper">
-            <div class="content">
-                <h1>Admin</h1>
-            </div>
+            <admin-sidebar />
+            <div class="main-content"></div>
         </div>
     </div>
 </template>
 
-<style>
-    @import "./styles/admin.scss";
+<style lang="scss">
+.content-wrapper .main-content {
+    overflow: hidden;
+    margin-left: 24rem;
+}
 </style>
