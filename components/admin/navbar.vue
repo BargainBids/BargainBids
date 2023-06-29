@@ -5,7 +5,9 @@
 <template>
   <div class="header">
     <div class="logo">
-
+      <a href="/">
+        <nuxt-img src="~/assets/images/fulltext_logo.png" alt="FullText logo" />
+      </a>
     </div>
     <div class="search-box">
 
