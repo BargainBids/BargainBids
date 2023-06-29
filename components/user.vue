@@ -1,16 +1,26 @@
 <template>
-    <div>
-      <button @click="signInWithPopup">Sign In!</button>
-      <img src="#" alt="User avatar" />
-      <span>Username placeholder</span>
+  <div>
+    <button @click="signInWithPopup">Sign in with Google</button>
+    <div v-if="user">
+      <h2>Welcome, {{ user.displayName }}</h2>
+      <img :src="user.photoURL" alt="Profile Picture" />
     </div>
-  </template>
+    <div v-else>æggekage</div>
+  </div>
+</template>
   
   <script>
-  import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+  import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged } from "firebase/auth";
   import { initializeApp } from "firebase/app";
   
   export default {
+    data() {
+      return {
+        auth: null,
+        provider: null,
+        user: null,
+      };
+    },
     mounted() {
       const firebaseConfig = {
         apiKey: "AIzaSyBT8eLeWjW3wzgbtuP11q3YE86SxvxqpkM",
@@ -21,13 +31,21 @@
         appId: "1:175442582499:web:0ae391dda639064c5d1ed6",
         measurementId: "G-81GBRV9TMT"
       };
-  
       const app = initializeApp(firebaseConfig);
       const auth = getAuth(app);
       const provider = new GoogleAuthProvider();
   
       this.auth = auth;
       this.provider = provider;
+      onAuthStateChanged(auth, (user) => {
+      if (user) {
+        this.user = user;
+        console.log("User is signed in");
+      } else {
+        this.user = null;
+        console.log("User is signed out");
+      }
+    });
     },
     methods: {
       signInWithPopup() {
@@ -36,8 +54,10 @@
             // Handle success
             const credential = GoogleAuthProvider.credentialFromResult(result);
             const token = credential.accessToken;
-            const user = result.user;
+            this.user = result.user;
             console.log("Success!");
+            console.log(result.user.displayName, result.user.email, result.user.photoURL);
+            
           })
           .catch((error) => {
             // Handle error
