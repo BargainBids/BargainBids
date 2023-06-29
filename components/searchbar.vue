@@ -1,5 +1,5 @@
 <script setup>
-//TODO: Add search functionality
+    //TODO: Add search functionality
 </script>
 
 <template>
@@ -8,5 +8,5 @@
 
 
 <style>
-@import "./styles/searchbar.css";
+    @import "./styles/searchbar.css";
 </style>

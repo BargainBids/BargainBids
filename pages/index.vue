@@ -6,3 +6,16 @@
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+
+const counter = useCounter()
+
+// if (process.server) {
+//   counter.n = 20
+// }
+</script>
+
+<style>
+  @import "./styles/index.scss";
+</style>
