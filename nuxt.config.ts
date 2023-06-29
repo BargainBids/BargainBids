@@ -33,6 +33,7 @@ export default defineNuxtConfig({
   },
 
   image: {
+    dir: 'server/static/images',
     quality: 80,
     formats: ['webp'],
     screens: {
@@ -45,7 +46,9 @@ export default defineNuxtConfig({
     presets: {
       logo: {
         modifiers: {
-          format: 'svg',
+          format: 'png',
+          width: 50,
+          height: 50,
         }
       }
     }

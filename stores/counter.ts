@@ -1,5 +1,6 @@
 const delay = (t: number) => new Promise((r) => setTimeout(r, t))
 
+// @ts-ignore
 export const useCounter = defineStore('counter', {
   state: () => ({
     n: 2,
@@ -9,7 +10,7 @@ export const useCounter = defineStore('counter', {
   }),
 
   getters: {
-    double: (state) => state.n * 2,
+    double: (state: { n: number }) => state.n * 2,
   },
 
   actions: {
