@@ -1,8 +1,9 @@
 <template>
 <div class="q-pa-md q-gutter-sm">
   <q-avatar rounded>
-    <q-img :src="url" />
+    <q-img :src="picurl" />
   </q-avatar>
+  <p>{{ userName }}</p>
 </div>
 </template>
 
@@ -14,16 +15,19 @@ export default {
   setup() {
 
     const currentUser = useCurrentUser();
-    const url = ref('');
+    const picurl = ref('');
+    const userName = ref('');
     watchEffect(() => {
       if (currentUser.value) {
-        url.value = currentUser.value.photoURL;
+        picurl.value = currentUser.value.photoURL;
+        userName.value = currentUser.value.displayName;
         console.log("I'm getting from quser: ", currentUser.value.displayName);
       }
     });
 
     return {
-      url,
+      picurl,
+      userName
     }
   }
 }
