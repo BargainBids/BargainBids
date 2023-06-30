@@ -5,7 +5,7 @@
         </div>
         <div class="navbar_routers">
             <router-link class="router_button" to="/">Home</router-link>
-            <router-link class="router_button" to="/products">Products</router-link>
+            <router-link class="router_button" to="/qtest">Products</router-link>
             <searchbar />
         </div>
         <div>

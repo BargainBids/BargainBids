@@ -6,9 +6,15 @@ export const useUserAuthStore = defineStore({
     userAuth: null,
   }),
   getters: {
-    getUserAuth(): any {
+    getUserAuth() {
       return this.userAuth;
     },
+    getUserPicture() {
+      return this.userAuth.photoURL;
+    },
+    getUserName() {
+      return this.userAuth.displayName;
+    }
   },
   actions: {
     authorizeUser(userAuth: any) {

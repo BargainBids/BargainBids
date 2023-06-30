@@ -9,8 +9,12 @@ export default defineNuxtConfig({
     '@nuxt/ui',
     '@pinia/nuxt',
     '@nuxt/image',
+    'nuxt-quasar-ui',
     'nuxt-vuefire'
   ],
+
+  quasar: {
+  },
 
   vuefire: {
     auth: true,
@@ -37,7 +41,7 @@ export default defineNuxtConfig({
   css: [
     '@/server/scss/main.scss'
   ],
-
+  
   postcss: {
     plugins: {
       tailwindcss: {},

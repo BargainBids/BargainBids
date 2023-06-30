@@ -14,6 +14,7 @@
     "@types/node": "^18",
     "autoprefixer": "^10.4.14",
     "nuxt": "^3.6.1",
+    "nuxt-quasar-ui": "^2.0.2",
     "postcss": "^8.4.24",
     "sass": "^1.63.6",
     "sass-loader": "^13.3.2",
@@ -24,11 +25,13 @@
     "@firebase/auth": "^0.23.2",
     "@nuxt/ui": "^0.4.1",
     "@pinia/nuxt": "^0.4.11",
+    "@quasar/extras": "^1.16.4",
     "firebase": "^9.23.0",
     "firebase-admin": "^11.9.0",
     "firebase-tools": "^12.4.1",
     "nuxt-vuefire": "^0.1.6",
     "pinia": "^2.1.4",
+    "quasar": "^2.12.1",
     "vuefire": "^3.1.0"
   }
 }

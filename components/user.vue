@@ -18,7 +18,6 @@ import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signO
 import { initializeApp } from "firebase/app";
 import { useUserAuthStore } from '../stores/authStore.ts';
 import { useCurrentUser } from "vuefire";
-
 export default {
   setup() {
     const userAuth = useUserAuthStore();
