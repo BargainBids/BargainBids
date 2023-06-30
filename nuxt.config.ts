@@ -15,13 +15,13 @@ export default defineNuxtConfig({
   vuefire: {
     auth: true,
     config: {
-      apiKey: "AIzaSyBT8eLeWjW3wzgbtuP11q3YE86SxvxqpkM",
-      authDomain: "bargainbids23.firebaseapp.com",
-      projectId: "bargainbids23",
-      storageBucket: "bargainbids23.appspot.com",
-      messagingSenderId: "175442582499",
-      appId: "1:175442582499:web:0ae391dda639064c5d1ed6",
-      measurementId: "G-81GBRV9TMT"
+      apiKey: process.env.FIREBASE_API_KEY,
+      authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+      projectId: process.env.FIREBASE_AUTH_PROJECT_ID,
+      storageBucket: process.env.FIREBASE_AUTH_STORAGE_BUCKET,
+      messagingSenderId: process.env.FIREBASE_AUTH_MESSAGING_SENDER_ID,
+      appId: process.env.FIREBASE_AUTH_APP_ID,
+      measurementId: process.env.FIREBASE_AUTH_MEASUREMENT_ID
     },
     admin: {
       serviceAccount: './server/firebase/bargainbids23-firebase-adminsdk-4npwg-62a5652b24.json',

@@ -22,6 +22,7 @@
   "dependencies": {
     "@firebase/app": "^0.9.13",
     "@firebase/auth": "^0.23.2",
+    "@heroicons/vue": "^2.0.18",
     "@nuxt/ui": "^0.4.1",
     "@pinia/nuxt": "^0.4.11",
     "firebase": "^9.23.0",
