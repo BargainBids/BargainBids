@@ -3,29 +3,33 @@
     <q-btn-dropdown
       class="glossy"
       color="bg-secondary"
-      label="Account Settings"
+      label="My account"
     >
       <div class="row no-wrap q-pa-md">
         <div class="column">
-          <div class="text-h6 q-mb-md">Settings</div>
-          <q-toggle v-model="mobileData" label="Use Mobile Data" />
-          <q-toggle v-model="bluetooth" label="Bluetooth" />
+          <div class="text-h6 q-mb-md">Options</div>
+          <q-item clickable v-close-popup>
+            <q-item-section>
+              <q-item-label>My Profile</q-item-label>
+            </q-item-section>
+            <q-item-section side>
+              <q-icon name="person" />
+            </q-item-section>
+          </q-item>
+          <q-item clickable v-close-popup>
+            <q-item-section>
+              <q-item-label>My page</q-item-label>
+            </q-item-section>
+            <q-item-section side>
+              <q-icon name="contact_page" />
+            </q-item-section>
+          </q-item>
         </div>
 
         <q-separator vertical inset class="q-mx-lg" />
 
         <div class="column items-center">
-          <navbar-quser />
-
-          <div class="text-subtitle1 q-mt-md q-mb-xs">John Doe</div>
-
-          <q-btn
-            color="primary"
-            label="Logout"
-            push
-            size="sm"
-            v-close-popup
-          />
+          <navbar-quser :user="user" />
         </div>
       </div>
     </q-btn-dropdown>
@@ -33,14 +37,22 @@
 </template>
 
 <script>
-import { ref } from 'vue'
+import { ref, watchEffect } from 'vue'
+import { useCurrentUser } from 'vuefire';
 
 export default {
-  setup () {
+  setup() {
+    const currentUser = useCurrentUser();
+    const user = ref('');
+    watchEffect(() => {
+      if (currentUser.value) {
+        user.value = currentUser.value;
+        console.log("I'm getting from quserdropdown: ", currentUser.value.displayName);
+      }
+    });
     return {
-      mobileData: ref(false),
-      bluetooth: ref(false)
-    }
+      user
+    };
   }
 }
 </script>
