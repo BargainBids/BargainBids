@@ -33,6 +33,7 @@
 <script>
 import { ref, watchEffect } from 'vue'
 import { signInWithPopup, GoogleAuthProvider } from '@firebase/auth';
+import { useFirebaseAuth } from 'vuefire';
 
 export default {
   props: {
